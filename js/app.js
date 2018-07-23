@@ -13,7 +13,18 @@ function initView() {
 	addMoveLitener();
 	addActiveLitener();
 	addCompletedLitener();
+	addRemoveCompletedLitener();
 };
+
+function addRemoveCompletedLitener() {
+	$(".clear-completed").click(() => {
+		$(".todo-list li").each((index,obj) => {
+			if ($(obj).hasClass("completed")) {
+				$(obj).remove();
+			}
+		});
+	});
+}
 
 function addCompletedLitener() {
 	$("[href='#/completed']").click(() => {

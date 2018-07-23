@@ -11,7 +11,20 @@ function initView() {
 	addToggleLitener();
 	addToggleAllLitener();
 	addMoveLitener();
+	addActiveLitener();
 };
+
+function addActiveLitener() {
+	$("[href='#/active']").click(() => {
+		$("a").removeClass("selected");
+		$("[href='#/active']").addClass("selected");
+		$(".todo-list li").each((index,obj) => {
+			if ($(obj).hasClass("completed")) {
+				$(obj).hide();
+			}
+		});
+	});
+}
 
 function addNewTodoLitener() {
 	newTodo.bind('keypress', (event) => {

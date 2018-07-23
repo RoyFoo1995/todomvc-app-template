@@ -9,7 +9,7 @@ function initView() {
 	
 	addNewTodoLitener();
 	addToggleLitener();
-	// addToggleAllLitener();
+	addToggleAllLitener();
 	// addMoveLitener();
 };
 
@@ -20,11 +20,11 @@ function addNewTodoLitener() {
 		}
 	});
 }
-// function addToggleAllLitener() {
-// 	toggleAll.click(() => {
-// 		toggleOnOrOffAllTodo();
-// 	});
-// }
+function addToggleAllLitener() {
+	toggleAll.click(() => {
+		toggleOnOrOffAllTodo();
+	});
+}
 
 // function addMoveLitener() {
 // 	$(".destroy").each((index, obj) => {
@@ -57,17 +57,17 @@ function addToggleLitener() {
 	})
 }
 
-// //TODO:
-// function toggleOnOrOffAllTodo() {
-// 	let completedParent = $($(".toggle").parent().parent("li"));
-// 	if (completedParent.hasClass("completed")) {
-// 		completedParent.removeClass("completed");
-// 		$(".todo-list li").removeClass("completed");
-// 	} else {
-// 		completedParent.addClass("completed");
-// 		$(".todo-list li").addClass("completed");
-// 	}
-// }
+//TODO:
+function toggleOnOrOffAllTodo() {
+	let completedParent = $($(".toggle").parent().parent("li"));
+	if (completedParent.hasClass("completed")) {
+		completedParent.removeClass("completed");
+		$(".todo-list li").removeClass("completed");
+	} else {
+		completedParent.addClass("completed");
+		$(".todo-list li").addClass("completed");
+	}
+}
 
 function addTodo() {
 	let li = $("<li></li>");

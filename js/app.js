@@ -8,7 +8,7 @@ function initView() {
 	toggleAll = $(".toggle-all");
 	
 	addNewTodoLitener();
-	// addToggleLitener();
+	addToggleLitener();
 	// addToggleAllLitener();
 	// addMoveLitener();
 };
@@ -35,27 +35,27 @@ function addNewTodoLitener() {
 // 	});
 // }
 
-// function addToggleLitener() {
-// 	//TODO:
-// 	// $(".toggle").click(() => {
-// 	// 	let completedParent = $($(this).closest("li"));
-// 	// 		if (completedParent.hasClass("completed")) {1
-// 	// 			completedParent.removeClass("completed");
-// 	// 		}else{
-// 	// 			completedParent.addClass("completed");
-// 	// 		}
-// 	// });
-// 	$(".toggle").each((index, obj) => {
-// 		$(obj).click(() => {
-// 			let completedParent = $($(obj).closest("li"));
-// 			if (completedParent.hasClass("completed")) {
-// 				completedParent.removeClass("completed");
-// 			} else {
-// 				completedParent.addClass("completed");
-// 			}
-// 		});
-// 	})
-// }
+function addToggleLitener() {
+	//TODO:
+	// $(".toggle").click(() => {
+	// 	let completedParent = $($(this).closest("li"));
+	// 		if (completedParent.hasClass("completed")) {1
+	// 			completedParent.removeClass("completed");
+	// 		}else{
+	// 			completedParent.addClass("completed");
+	// 		}
+	// });
+	$(".toggle").each((index, obj) => {
+		$(obj).click(() => {
+			let completedParent = $($(obj).closest("li"));
+			if (completedParent.hasClass("completed")) {
+				completedParent.removeClass("completed");
+			} else {
+				completedParent.addClass("completed");
+			}
+		});
+	})
+}
 
 // //TODO:
 // function toggleOnOrOffAllTodo() {

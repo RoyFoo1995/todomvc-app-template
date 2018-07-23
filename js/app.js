@@ -12,10 +12,25 @@ function initView() {
 	addToggleAllLitener();
 	addMoveLitener();
 	addActiveLitener();
+	addCompletedLitener();
 };
+
+function addCompletedLitener() {
+	$("[href='#/completed']").click(() => {
+		showAllTodo();
+		$("a").removeClass("selected");
+		$("[href='#/completed']").addClass("selected");
+		$(".todo-list li").each((index,obj) => {
+			if (!$(obj).hasClass("completed")) {
+				$(obj).hide();
+			}
+		});
+	});
+}
 
 function addActiveLitener() {
 	$("[href='#/active']").click(() => {
+		showAllTodo();
 		$("a").removeClass("selected");
 		$("[href='#/active']").addClass("selected");
 		$(".todo-list li").each((index,obj) => {
@@ -23,6 +38,14 @@ function addActiveLitener() {
 				$(obj).hide();
 			}
 		});
+	});
+}
+
+function showAllTodo() {
+	$(".todo-list li").each((index,obj) => {
+		if ($(obj).css("display") === "none") {
+			$(obj).show();
+		}
 	});
 }
 

@@ -10,7 +10,7 @@ function initView() {
 	addNewTodoLitener();
 	addToggleLitener();
 	addToggleAllLitener();
-	// addMoveLitener();
+	addMoveLitener();
 };
 
 function addNewTodoLitener() {
@@ -26,14 +26,14 @@ function addToggleAllLitener() {
 	});
 }
 
-// function addMoveLitener() {
-// 	$(".destroy").each((index, obj) => {
-// 		$(obj).click(() => {
-// 			let liParent = $($(obj).closest("li"));
-// 			liParent.hide();
-// 		});
-// 	});
-// }
+function addMoveLitener() {
+	$(".destroy").each((index, obj) => {
+		$(obj).click(() => {
+			let liParent = $($(obj).closest("li"));
+			liParent.hide();
+		});
+	});
+}
 
 function addToggleLitener() {
 	//TODO:
